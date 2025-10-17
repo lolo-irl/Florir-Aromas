@@ -1,0 +1,183 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F1F0E4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header / Título */
+h1 {
+  text-align: center;
+  padding: 20px;
+  background: #697963;
+  border-bottom: 2px solid #ddd;
+  font-size: 1.8em;
+  color: #333;
+  border-bottom: 2px solid #000000;
+}
+
+/* Navegação principal do admin */
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  background: #BCA88D;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+nav a:hover {
+  background: #7D8D86;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Barra superior com links (Voltar / Registrar) */
+.top-links {
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.top-links a {
+  background: #a0522d;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.top-links a:hover {
+  background: #804020;
+}
+
+/* Tabelas de listagem */
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.actions a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+.actions a.delete {
+  color: red;
+}
+
+/* Links de ação dentro da tabela */
+.actions a {
+  margin-right: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
+
+.actions a.edit {
+  color: #3498db;
+}
+
+.actions a.delete {
+  color: #e74c3c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+      grid-template-columns: 1fr;
+  }
+
+  .top-links {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  table, thead, tbody, th, td, tr {
+      display: block;
+      width: 100%;
+  }
+
+  table tr {
+      margin-bottom: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+  }
+
+  table td {
+      border: none;
+      padding: 8px;
+      text-align: right;
+      position: relative;
+  }
+
+  table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 15px;
+      font-weight: bold;
+      color: #333;
+  }
+
+  table th {
+      display: none;
+  }
+}

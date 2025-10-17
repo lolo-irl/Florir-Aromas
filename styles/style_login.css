@@ -1,0 +1,242 @@
+:root {
+    --primary: #697963;
+    --secondary: #BCA88D;
+    --light: #F1F0E4;
+    --dark: #1E1E1E;
+    --error: #f44336;
+    --text: #333;
+    --border: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body.login-split {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body.login-split::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../uploads/beija.jpg") no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 900px;
+    height: 500px;
+    background: #F1F0E4;
+    border-radius: 16px;
+    overflow: hidden;
+    border-style: groove;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Lado esquerdo - Formulário */
+.login-form {
+    flex: 1;
+    background: #F1F0E4;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h2 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.login-form h1 {
+    margin: 10px 0 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Alertas */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.alert.error {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--error);
+    border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+.alert-icon {
+    font-size: 16px;
+}
+
+/* Formulário */
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #7D8D86;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #000000;
+    background: #F1F0E4;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.btn-login {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background: #697963;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #7D8D86;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-footer a {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Lado direito - Imagem */
+.login-side {
+    flex: 1;
+    background: #F1F0E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+
+.login-side::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(105, 121, 99, 0.1), rgba(188, 168, 141, 0.1));
+    z-index: 1;
+}
+
+.login-side img {
+    max-width: 80%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        margin: 20px auto;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+    
+    .login-side {
+        display: none;
+    }
+    
+    .login-form {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 20px;
+    }
+    
+    .login-form h1 {
+        font-size: 24px;
+    }
+    
+    .logo h2 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,208 @@
+:root {
+    --primary: #697963;
+    --secondary: #BCA88D;
+    --light: #F1F0E4;
+    --dark: #1E1E1E;
+    --success: #4CAF50;
+    --error: #f44336;
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body.login-split {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body.login-split::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../uploads/beija.jpg") no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background: #F1F0E4;
+    border-radius: 16px;
+    overflow: hidden;
+    border-style: groove;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Lado esquerdo - Formulário */
+.login-form {
+    flex: 1;
+    background: #F1F0E4;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome {
+    font-size: 14px;
+    color: #777;
+}
+
+.login-form h1 {
+    margin: 10px 0 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-form label {
+    font-size: 14px;
+    color: #444;
+    margin-top: 15px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #7D8D86;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    background: #f9f9f9;
+}
+
+.login-form input:focus {
+    border-color: #000000;
+    background: #F1F0E4;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.btn-login {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: #697963;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #7D8D86;
+}
+
+.erro {
+    color: #c00;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(244, 67, 54, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+.sucesso {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.signup-text {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.signup-text a {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Lado direito - Imagem */
+.login-side {
+    flex: 1;
+    background: #F1F0E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.login-side img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        margin: 20px auto;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+    
+    .login-side {
+        display: none;
+    }
+    
+    .login-form {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 20px;
+    }
+    
+    .login-form h1 {
+        font-size: 24px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+}
